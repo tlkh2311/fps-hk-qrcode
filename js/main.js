@@ -44,6 +44,7 @@
         switch ($(this).val()) {
             case "02":
                 $('.validate-form :input[name="fps_id"]').show();
+                $('.validate-form :input[name="fps_id"]').prop('disabled', false);
                 break;
             case "03":
                 $('.validate-form :input[name="bank_code"]').show();
@@ -52,25 +53,30 @@
             case "04":
                 $('.validate-form :input[name="bank_code"]').show();
                 $('.validate-form :input[name="email"]').show();
+                $('.validate-form :input[name="email"]').prop('disabled', false);
                 break;
             case "05":
                 $('.validate-form :input[name="mobile"]').show();
                 break;
             case "06":
                 $('.validate-form :input[name="email"]').show();
+                $('.validate-form :input[name="email"]').prop('disabled', false);
                 break;
             case "10": // CLP
                 $('.validate-form :input[name="fps_id"]').show();
+                $('.validate-form :input[name="bill_number"]').show();
                 $('.validate-form :input[name="fps_id"]').prop('disabled', true);
                 $('.validate-form :input[name="fps_id"]').val('4853305');
                 break;
             case "11": // Towngas
                 $('.validate-form :input[name="fps_id"]').show();
+                $('.validate-form :input[name="bill_number"]').show();
                 $('.validate-form :input[name="fps_id"]').prop('disabled', true);
                 $('.validate-form :input[name="fps_id"]').val('1187368');
                 break;
             case "12": // WSD
                 $('.validate-form :input[name="email"]').show();
+                $('.validate-form :input[name="bill_number"]').show();
                 $('.validate-form :input[name="email"]').prop('disabled', true);
                 $('.validate-form :input[name="email"]').val('wsdinfo@wsd.gov.hk');
                 break;
