@@ -12,13 +12,24 @@ function emvEncode(obj) {
 
     switch (obj.account) {
         case "02":
+        case "10":
+        case "11":
             merchantAccountInformationTemplate = dataObj("02", obj.fps_id);
+            break;
+        case "12": // WSD
+            merchantAccountInformationTemplate = dataObj("04", obj.email) + dataObj("06", "1");
             break;
         case "03":
             merchantAccountInformationTemplate = dataObj("01", obj.bank_code) + dataObj("03", obj.mobile);
             break;
         case "04":
-            merchantAccountInformationTemplate = dataObj("01", obj.bank_code) + dataObj("04", obj.email.toUpperCase());
+            merchantAccountInformationTemplate = dataObj("01", obj.bank_code) + dataObj("04", obj.email);
+            break;
+        case "05":
+            merchantAccountInformationTemplate = dataObj("03", obj.mobile);
+            break;
+        case "06":
+            merchantAccountInformationTemplate = dataObj("04", obj.email);
             break;
     }
 
@@ -29,8 +40,8 @@ function emvEncode(obj) {
     var merchantName = dataObj("59", "NA");
     var merchantCity = dataObj("60", "HK");
     var transactionAmount = (obj.amount == "") ? "" : dataObj("54", obj.amount);
-    var reference = (obj.reference == "") ? "" : dataObj("05", obj.reference);
-    var additionalDataTemplate = (reference == "") ? "" : dataObj("62", reference);
+    var bill_number = (obj.bill_number == "") ? "" : dataObj("01", obj.bill_number);
+    var additionalDataTemplate = (bill_number == "") ? "" : dataObj("62", bill_number);
 
     var msg = ""
     msg += payloadFormatIndicator;

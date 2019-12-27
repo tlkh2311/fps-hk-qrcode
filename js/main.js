@@ -12,7 +12,7 @@
     var currency = $('.validate-input :input[name="currency"]');
     var amount = $('.validate-input :input[name="amount"]');
     var message = $('.validate-input :input[name="message"]');
-    var reference = $('.validate-input :input[name="reference"]');
+    var bill_number = $('.validate-input :input[name="bill_number"]');
     var hash = $('.validate-input :input[name="hash"]');
 
 
@@ -26,7 +26,7 @@
             "mcc": mcc.val(),
             "currency": currency.val(),
             "amount": amount.val(),
-            "reference": reference.val()
+            "bill_number": bill_number.val()
         });
 
         var crc = crc16(msg).toString(16).pad(4).toUpperCase();
@@ -52,6 +52,27 @@
             case "04":
                 $('.validate-form :input[name="bank_code"]').show();
                 $('.validate-form :input[name="email"]').show();
+                break;
+            case "05":
+                $('.validate-form :input[name="mobile"]').show();
+                break;
+            case "06":
+                $('.validate-form :input[name="email"]').show();
+                break;
+            case "10": // CLP
+                $('.validate-form :input[name="fps_id"]').show();
+                $('.validate-form :input[name="fps_id"]').prop('disabled', true);
+                $('.validate-form :input[name="fps_id"]').val('4853305');
+                break;
+            case "11": // Towngas
+                $('.validate-form :input[name="fps_id"]').show();
+                $('.validate-form :input[name="fps_id"]').prop('disabled', true);
+                $('.validate-form :input[name="fps_id"]').val('1187368');
+                break;
+            case "12": // WSD
+                $('.validate-form :input[name="email"]').show();
+                $('.validate-form :input[name="email"]').prop('disabled', true);
+                $('.validate-form :input[name="email"]').val('wsdinfo@wsd.gov.hk');
                 break;
         }
     });
