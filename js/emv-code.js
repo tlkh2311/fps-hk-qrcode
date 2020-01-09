@@ -29,6 +29,7 @@ function emvEncode(obj) {
             merchantAccountInformationTemplate = dataObj("03", obj.mobile);
             break;
         case "06":
+        case "13":
             merchantAccountInformationTemplate = dataObj("04", obj.email);
             break;
     }

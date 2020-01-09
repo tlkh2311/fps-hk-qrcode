@@ -74,6 +74,12 @@
                 $('.validate-form :input[name="email"]').prop('disabled', true);
                 $('.validate-form :input[name="email"]').val('wsdinfo@wsd.gov.hk');
                 break;
+			case "13": // RVD
+                $('.validate-form :input[name="email"]').show();
+                $('.validate-form :input[name="email"]').prop('disabled', true);
+                $('.validate-form :input[name="email"]').val('not_for_enquiry@rvd.gov.hk');
+                break;
+
         }
     });
 
