@@ -23,7 +23,7 @@
 				</span>
 
 				<span>
-					<label>CAUTION: This is NOT official generator. For more information, please visit <a href="https://ffo.hkma.gov.hk/download/Common_QR_Code_Specification_for_Retail_Payments_in_HK_v1_0.pdf"
+					<label>CAUTION: This is NOT official generator. For more information, please visit <a href="https://www.hkma.gov.hk/media/eng/doc/key-functions/finanical-infrastructure/infrastructure/retail-payment-initiatives/Common_QR_Code_Specification.pdf"
 						 target="_blank">here</a>.</label>
 				</span>
 
@@ -75,11 +75,11 @@
 
 				<div class="wrap-input1 validate-input">
 					<input type="text" class="input1" name="amount" placeholder="Transaction Amount (Optional)"></input>
-					<span class="shadow-input1"></span>
+					<span class="shadow-input1"></span>
 				</div>
 
-				<div class="wrap-input1 validate-input">
-					<input type="text" class="input1" name="bill_number" placeholder="Bill Number (Additional Data)"></input>
+				<div class="wrap-input1 validate-input" data-tip="Please refer to a existing FPS Payment Code.Some Merchant need to add '00-' at the front.">
+					<input type="text" class="input1" name="bill_number" placeholder="Bill Number (Additional Data)" style="display: none;"></input>
 					<span class="shadow-input1"></span>
 				</div>
 
